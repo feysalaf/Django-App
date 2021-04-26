@@ -1,0 +1,18 @@
+echo "Initializing Angular 10 project....";
+echo "Enter the name of the project:";read projectName;
+echo "Generating ${projectName}... (1/4)";
+ng new ${projectName} --interactive false --routing true --style scss  &>/dev/null;
+echo "✔ Successful";
+echo "Going into project directory...";
+cd ${projectName};
+echo "✔ Successful";
+echo "Installing dependencies... (2/4)";
+(npm install @angular-builders/custom-webpack postcss-scss postcss-import postcss-loader -D --save && npm i -D tailwindcss autoprefixer postcss postcss-import postcss-loader postcss-scss) &>/dev/null;
+echo "✔ Successful";
+echo "Installing tailwind... (3/4)";
+ng add @ngneat/tailwind &>/dev/null;
+echo "✔ Successful";
+echo "Installing custom webpack... (4/4)";
+npm install @angular-builders/custom-webpack@10 &>/dev/null;
+echo "✔ Successful";
+echo "${projectName} initialized successfully";
