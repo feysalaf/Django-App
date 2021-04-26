@@ -1,27 +1,13 @@
 
 <div class="headingfont topbar backgroundcol flex  inset-0 items-center justify-center shadow-md text-left p-0">
-  <div  class="header_0_0">
 
-
-
-  </div>
 <div class="header_0_1">
-Mock Twitter
-</div>
-</div>
-
-<div class="grid-wrapper ml-3 mr-3 mt-5  justify-items-center">
-    <div class=" onediv shadow-md box-border min-h-full min-w-full self-center p-4 inset-0 flex items-center justify-center text-xl text-black bg-purple-100 content-center ">
-        1
-    </div>
-    <div class="twodiv shadow-md box-border min-h-full self-center p-4 inset-0 flex items-center justify-center text-xl text-black bg-purple-100 content-center" style="width:1000px;">
-        Feed
-    </div>
-    <div class="threediv box-border min-h-full min-w-full shadow-md  self-center p-4 inset-0 flex items-center justify-center text-xl text-black bg-purple-100 content-center ">
-        Followers
-    </div>
-
+  <a  [routerLink]="['home']">Mock Twitter</a>
 </div>
 
+</div>
+<div class="header_0_2">
+  <button class="bg-gray-800 rounded-lg text-sm" [routerLink]="['registration']">Register</button >
+</div>
 
 <router-outlet></router-outlet>
