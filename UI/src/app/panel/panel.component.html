@@ -1,0 +1,12 @@
+ <h2 style="text-align:center;margin-top:10px;">User Panel</h2>
+<h3 style="font-size:20px;color:#10C4AB;margin-left:20px;">Create Tweet</h3>
+<div class="flex_container  " style="height:200px;">
+
+<div class=" box box-border  ">
+   <form   id="usrform">
+    <textarea class="bg-gray-100" name="comment" [(ngModel)]="selectedUser.tweet" form="usrform">Enter text here...</textarea>
+
+  <button   (click)="createTweet()" style="font-size:16px;background-color:#10C4AB;border-radius:20px;width:100px;float:right;margin-right:20px;margin-top:20px;"> POST </button>
+  </form>
+</div>
+</div>

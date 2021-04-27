@@ -7,7 +7,15 @@
 
 </div>
 <div class="header_0_2">
-  <button class="bg-gray-800 rounded-lg text-sm" [routerLink]="['registration']">Register</button >
+  <button class="register bg-gray-800 rounded-lg text-sm" [routerLink]="['registration']">Register</button >
 </div>
+<div class="header_0_2">
+  <button class="login bg-gray-800 rounded-lg text-sm" [routerLink]="['login']">Login</button >
+</div>
+<!-- <div class="header_0_2" ngif="login">
+  <button class="login bg-gray-800 rounded-lg text-sm" [routerLink]="['login']">Login</button >
+</div> -->
+
+
 
 <router-outlet></router-outlet>

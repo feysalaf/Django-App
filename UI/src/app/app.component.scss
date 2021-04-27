@@ -16,7 +16,7 @@
   font-size:22px;
   font-weight: 550;
 }
-button{
+.register{
   width:90px;
   font-size: 18px;
   height:30px;
@@ -24,6 +24,17 @@ button{
   color:White;
   position: absolute;
   margin-left: 1800px;
+  margin-top:-40px;
+  z-index: 3;
+}
+.login{
+  width:90px;
+  font-size: 18px;
+  height:30px;
+  margin-left: 199px;
+  color:White;
+  position: absolute;
+  margin-left: 1700px;
   margin-top:-40px;
   z-index: 3;
 }
