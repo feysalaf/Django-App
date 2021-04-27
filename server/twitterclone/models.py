@@ -6,6 +6,7 @@ class User(models.Model):
     first_name = models.CharField(max_length=200)
     last_name  = models.CharField(max_length=200)
     age        = models.IntegerField()
+    user_name  = models.CharField(max_length=200)
 
     def __str__(self):
         return self.first_name
@@ -17,7 +18,7 @@ class Tweet(models.Model):
 class Following(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     following = models.CharField(max_length=50)
-
+#
 # class Question(models.Model):
 #     question_text = models.CharField(max_length=200)
 #     pub_date = models.DateTimeField('date published')
