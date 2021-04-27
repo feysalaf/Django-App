@@ -10,7 +10,7 @@ class User(models.Model):
     def __str__(self):
         return self.first_name
 
-class Tweets(models.Model):
+class Tweet(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     tweet = models.TextField()
 
@@ -33,4 +33,4 @@ class Following(models.Model):
 
 #User(first_name="Frank",last_name="Herbert",age=23).save();
 # q = Question.objects.get(pk=1)
-#q.following_set.create(following=User.objects.get(first_name="Arthur").first_name)     
+#q.following_set.create(following=User.objects.get(first_name="Arthur").first_name)
