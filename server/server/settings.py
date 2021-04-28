@@ -36,6 +36,15 @@ CORS_ALLOWED_ORIGINS = [
     "http://127.0.0.1:4200"
 ]
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        # 'rest_framework.authentication.BasicAuthentication',
+        # 'rest_framework.authentication.SessionAuthentication',
+        'knox.auth.TokenAuthentication',
+    ]
+}
+
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -47,7 +56,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework.authtoken',
     'corsheaders',
+    'knox',
 ]
 
 MIDDLEWARE = [

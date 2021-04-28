@@ -9,11 +9,11 @@
 <div class="regbody box box-border mt-8" style="height:222px;">
     <form >
      <label class="label" for="fname">Username:</label><br>
-     <input class="inputbox" type="text" id="fname" name="fname">  <br>
+     <input class="inputbox" type="text" id="fname" name="fname" [(ngModel)]="register.user_name">  <br>
      <label class="label" for="pw">Password:</label><br>
-     <input class="inputbox" type="text" id="pw" name="pw">  <br>
+     <input class="inputbox" type="password" id="pw" name="pw" [(ngModel)]="register.password">  <br>
 
-     <input class="submitButton bg-blue-500 text-sm " type="submit" value="Submit">
+     <input (click)="loginUser()" class="submitButton bg-blue-500 text-sm " type="submit" value="Submit">
 
    </form>
 </div>

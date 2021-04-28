@@ -28,6 +28,12 @@ export class ApiService {
     const body = {tweet:user.tweet};
     return this.http.post(this.baseurl + '/api/tweet/',body,{headers:this.httpHeaders});
   }
+  registerUser(userData): Observable<any> {
+    return this.http.post(this.baseurl + '/api/register/',userData);
+  }
+  loginUser(userData): Observable<any> {
+    return this.http.post(this.baseurl + '/api/login/',userData);
+  }
 
 
 }
