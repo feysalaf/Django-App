@@ -1,12 +1,28 @@
- <h2 style="text-align:center;margin-top:10px;">User Panel</h2>
-<h3 style="font-size:20px;color:#10C4AB;margin-left:20px;">Create Tweet</h3>
+ <h4 style="text-align:center;margin-top:10px;">User Panel</h4>
+<h5 style="font-size:20px;color:#10C4AB;margin-left:20px;">Create Tweet</h5>
 <div class="flex_container  " style="height:200px;">
 
 <div class=" box box-border  ">
    <form   id="usrform">
-    <textarea class="bg-gray-100" name="comment" [(ngModel)]="selectedUser.tweet" form="usrform">Enter text here...</textarea>
+    <textarea class="bg-gray-200" name="comment" [(ngModel)]="selectedUser.tweet" form="usrform">Enter text here...</textarea>
 
   <button   (click)="createTweet()" style="font-size:16px;background-color:#10C4AB;border-radius:20px;width:100px;float:right;margin-right:20px;margin-top:20px;"> POST </button>
   </form>
 </div>
+
+<div>
+ <h4 style="text-align:center;margin-top:10px;">User Tweets</h4>
+</div>
+
+ <div class="flex_container1  ">
+<div *ngFor="let array of array">
+ <div class=" flex_child box box-border  bg-gray-200 " >
+   <div class="">
+     <h2 style="font-size:18px;color:#10C4AB;">{{array.first_name}} {{array.last_name}}</h2>
+   </div>
+
+ </div>
+ </div>
+</div> 
+
 </div>
