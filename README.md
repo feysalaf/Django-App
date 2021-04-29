@@ -1,6 +1,75 @@
 # Django-App
 Small Scale Twitter Clone
 
+## Architecture
+
+
+The backend consists of `Django` and it works with the `REST Frameworks` to provide an `API` which is then connected to the `Angular` frontend. The backend is connected to a `PostgreSQL` database. The frontend is responsible to showing the content to authenticated users and for sending user data to the backend. It also protects the data from being viewed by unauthenticated users.
+
+## Features
+Available via the UI:
+* User authentication using knox tokens
+* Session authentication
+* Ability to log in user from the UI
+* Ability to log out user
+* Seeing tweets from other users
+* Unauthenticated users not allowed to view certain pages
+* Angular based token authentication and storage
+
+Available via the API:
+
+* Following other users
+* Writing tweets
+* Editing tweets
+
+
+## UI 
+* All authenticated users are redirected to the registration page
 <p align="center">
   <img src="https://github.com/feysalaf/Django-App/blob/master/readme/screens/regpage.png" width="100%" height="450" title="hover text">
 </p>
+* Upon registration the data is sent to backend for storage and authenticated later 
+
+<p align="center">
+  <img src="https://github.com/feysalaf/Django-App/blob/master/readme/screens/reg2.png" width="100%" height="450" title="hover text">
+</p>
+* Successful registration informs the user 
+<p align="center">
+  <img src="https://github.com/feysalaf/Django-App/blob/master/readme/screens/reg3.png" width="100%" height="450" title="hover text">
+</p>
+
+* A token is generated on registration which is then used to track the user session 
+
+<p align="center">
+  <img src="https://github.com/feysalaf/Django-App/blob/master/readme/screens/auth.png" width="40%" height="50%" title="hover text">
+</p>
+
+* User is afterwards redirected to the home page 
+<p align="center">
+  <img src="https://github.com/feysalaf/Django-App/blob/master/readme/screens/h1.png" width="100%" height="450" title="hover text">
+</p>
+
+## Log In Process
+
+* After registration user logs in by providing the proper details
+
+<p align="center">
+  <img src="https://github.com/feysalaf/Django-App/blob/master/readme/screens/log1.png" width="100%" height="450" title="hover text">
+</p>
+
+* A token is generated upon login as well, angular uses this and adds it to the header of every request made by the user
+<p align="center">
+  <img src="https://github.com/feysalaf/Django-App/blob/master/readme/screens/log2.png" width="40%" height="50%" title="hover text">
+</p>
+
+## Log Out Process
+* Upon logging out, the token is deleted from storage and user is redirected to the `registration` page again.
+
+
+## Backend 
+
+* The backend contains the respective tables in the `twitterdb` database. 
+<p align="center">
+  <img src="https://github.com/feysalaf/Django-App/blob/master/readme/screens/backend.png" width="100%" height="450" title="hover text">
+</p>
+ 
