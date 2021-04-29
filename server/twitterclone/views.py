@@ -1,34 +1,19 @@
 from django.shortcuts import render
-# Create your views here.
 from rest_framework import viewsets
 from rest_framework.views import APIView
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
-
-
 from rest_framework import generics, permissions
 from rest_framework.response import Response
 from knox.models import AuthToken
-
 from django.contrib.auth import login
 from rest_framework import permissions
 from rest_framework.authtoken.serializers import AuthTokenSerializer
 from knox.views import LoginView as KnoxLoginView
-
-
 from .serializers import UserSerializer, TweetSerializer, RegisterSerializer, ProfileSerializer,UserFollowingSerializer
 from .models import User,Tweet,Profile,UserFollowing
 from django.views.decorators.csrf import csrf_exempt
-from django.views.decorators.csrf import csrf_protect
 from rest_framework.authtoken.views import ObtainAuthToken
-
-from braces.views import CsrfExemptMixin
-
-
-
-
-from django.shortcuts import HttpResponse
-import json
 from rest_framework.decorators import api_view, schema
 
 
