@@ -27,7 +27,6 @@ export class FeedComponent implements OnInit {
               data[i]["username"] =msg['user_name'];
             }
           )
-        console.log(data);
         this.array = data;
       }},
       error => {

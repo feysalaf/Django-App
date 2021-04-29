@@ -23,6 +23,8 @@ export class FollowingComponent implements OnInit {
     this.api.getallUsers().subscribe(
       msg =>{
         this.array = msg;
+        console.log(msg);
+        console.log("Following initialized...");
       },
       error=>{
         console.log(error);
