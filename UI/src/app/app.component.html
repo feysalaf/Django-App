@@ -1,4 +1,4 @@
-
+<!--
 <div class="headingfont topbar backgroundcol flex  inset-0 items-center justify-center shadow-md text-left p-0">
 
 <div class="header_0_1">
@@ -14,10 +14,31 @@
 </div>
 <div class="header_0_2">
   <button class="logout bg-gray-800 rounded-lg text-sm" *ngIf="_apiService.loggedIn()" (click)="_apiService.logoutUser()" [routerLink]="['registration']">Log Out</button >
-</div>
+</div> -->
+
+
+
 <!-- <div class="header_0_2" ngif="login">
   <button class="login bg-gray-800 rounded-lg text-sm" [routerLink]="['login']">Login</button >
 </div> -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Twitter Clone</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+
+    </ul>
+    <ul class="navbar-nav">
+        <a class="nav-link"  [routerLink]="['login']"  *ngIf="!_apiService.loggedIn()">Login</a>
+        <a class="nav-link"  [routerLink]="['registration']">Register</a>
+        <a class="nav-link" style="cursor:pointer" *ngIf="_apiService.loggedIn()" (click)="_apiService.logoutUser()" [routerLink]="['registration']"  >Logout</a>
+    </ul>
+  </div>
+</nav>
 
 
 
