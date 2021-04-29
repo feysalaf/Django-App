@@ -17,11 +17,21 @@ export class FeedComponent implements OnInit {
   }
 
   getUsers = () => {
-    this.api.getallUsers().subscribe(
+    this.api.getTweets().subscribe(
       data => {
+        for(let i=0; i<data.length; i++){
+          let userid_ = data[i].user.replace(/[^\d.]/g, '' ).substring(12,);
+          this.api.getOneUser(userid_).subscribe(
+            msg =>{
+              //console.log(msg['user_name']);
+              data[i]["username"] =msg['user_name'];
+            }
+          )
+        console.log(data);
         this.array = data;
-      },
+      }},
       error => {
+        console.log(error);
         console.log("Could not receive data...");
       }
     );

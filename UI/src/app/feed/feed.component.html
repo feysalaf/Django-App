@@ -4,7 +4,7 @@
 <div *ngFor="let array of array">
  <div class=" flex_child box box-border bg-blue-100 " >
    <div class="">
-     <h2 style="font-size:18px;color:#10C4AB;">{{array.first_name}} {{array.last_name}}</h2>
+     <h2 style="font-size:18px;color:#10C4AB;">{{array.username}}</h2>
    </div>
    <div class="">
      <p style="font-size:16px;">{{array.tweet}}</p>
@@ -12,7 +12,7 @@
  </div>
  </div>
 
-<!-- 
+<!--
 First Name <input type="text" [(ngModel)]="selectedUser.first_name"/><br>
 Last Name <input type="text" [(ngModel)]="selectedUser.last_name"/><br>
 Age <input type="text" [(ngModel)]="selectedUser.age"/><br>

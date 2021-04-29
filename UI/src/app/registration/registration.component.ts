@@ -24,7 +24,11 @@ export class RegistrationComponent implements OnInit {
   registerUser(){
       this.api.registerUser(this.register).subscribe(
         response => {
-          console.log("User logged in ");
+          alert("User Registered");
+          console.log(response);
+          localStorage.setItem('token', response.token);
+          console.log("Token Stored");
+          console.log("Token:" + localStorage.getItem('token'));
         },
         error => {
           console.log("Error while registering user");

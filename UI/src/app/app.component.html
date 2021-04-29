@@ -12,6 +12,9 @@
 <div class="header_0_2">
   <button class="login bg-gray-800 rounded-lg text-sm" [routerLink]="['login']">Login</button >
 </div>
+<div class="header_0_2">
+  <button class="logout bg-gray-800 rounded-lg text-sm" *ngIf="_apiService.loggedIn()" (click)="_apiService.logoutUser()" [routerLink]="['registration']">Log Out</button >
+</div>
 <!-- <div class="header_0_2" ngif="login">
   <button class="login bg-gray-800 rounded-lg text-sm" [routerLink]="['login']">Login</button >
 </div> -->
