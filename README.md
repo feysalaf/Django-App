@@ -3,9 +3,11 @@ Small Scale Twitter Clone
 
 ## Architecture
 
-
-The backend consists of `Django` and it works with the `REST Frameworks` to provide an `API` which is then connected to the `Angular` frontend. The backend is connected to a `PostgreSQL` database. The frontend is responsible to showing the content to authenticated users and for sending user data to the backend. It also protects the data from being viewed by unauthenticated users.
-
+#### Frontend: `Angular`
+#### Backend: `Django`
+#### DataBase: `PostgreSQL`
+#### API: `Django REST`
+ 
 ## Features
 Available via the UI:
 * User authentication using knox tokens
@@ -40,7 +42,7 @@ Available via the API:
 
 * A token is generated on registration which is then used to track the user session 
 
-<p align="center">
+<p align="center">#
   <img src="https://github.com/feysalaf/Django-App/blob/master/readme/screens/auth.png" width="40%" height="50%" title="hover text">
 </p>
 
