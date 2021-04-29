@@ -45,13 +45,6 @@ class UserFollowingViewSet(viewsets.ModelViewSet):
     #authentication_classes = (TokenAuthentication,)
     permission_classes = (permissions.AllowAny,)
 
-#
-# class FollowingViewSet(viewsets.ModelViewSet):
-#     queryset = Following.objects.all().order_by('id')
-#     serializer_class = FollowingSerializer
-#     #authentication_classes = (TokenAuthentication,)
-#     permission_classes = (IsAuthenticated,)
-
 class RegisterAPI(generics.GenericAPIView):
     serializer_class = RegisterSerializer
 
@@ -83,27 +76,3 @@ class AddFollower(  APIView):
 
         UserFollowing.objects.create(user=self.request.data.get('userID'),following_user=self.request.data.get('followID'))
         return render_to_response({'status':status.HTTP_200_OK, 'data':"", 'message':"follow"+str(follow.user_id)})
-
-
-#
-# class CustomAuthTokenView(viewsets.ModelViewSet):
-#     queryset = ''
-#     serializer_class = AuthTokenSerializer
-#     def post(self, request, *args, **kwargs):
-#         serializer = AuthTokenSerializer(data=request.data)
-#         serializer.is_valid(raise_exception=True)
-#         user = serializer.validated_data['user']
-#         return Response({
-#             "user": UserSerializer(user, context=self.get_serializer_context()).data,
-#         })
-#
-#
-# class check_login(generics.GenericAPIView):
-#     serializer_class =
-#     def check_login(request):
-#         serializer = AuthTokenSerializer(data=request.data)
-#         serializer.is_valid(raise_exception=True)
-#         user = serializer.validated_data['user']
-#         return Response({
-#             "user": UserSerializer(user, context=self.get_serializer_context()).data,
-#         })

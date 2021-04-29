@@ -1,21 +1,12 @@
 from rest_framework import serializers
 #from django.contrib.auth.models import User
 from .models import Tweet,Profile,UserFollowing
-
 from django.contrib.auth.models import User, Group
-
-# class UserSerializer(serializers.HyperlinkedModelSerializer):
-#     class Meta:
-#         model = User
-#         fields = ('username',
-#                   'password')
-
 # User Serializer
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ('id', 'username', 'email','password')
-
 class ProfileSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Profile
@@ -33,20 +24,12 @@ class RegisterSerializer(serializers.ModelSerializer):
         user = User.objects.create_user(validated_data['username'], validated_data['email'], validated_data['password'])
 
         return user
-
 class TweetSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Tweet
         fields = ('id',
                   'user',
                   'tweet')
-# class FollowingSerializer(serializers.HyperlinkedModelSerializer):
-#     class Meta:
-#         model = Following
-#         fields = ('id',
-#                   'user',
-#                   'following')
-
 class UserFollowingSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = UserFollowing

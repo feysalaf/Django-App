@@ -13,13 +13,8 @@ router.register(r'profile',views.ProfileViewSet)
 router.register(r'tweet', views.TweetViewSet)
 router.register(r'UserFollowing', views.UserFollowingViewSet)
 
-# router.register(r'data',views.CustomAuthTokenView,basename='data')
-
 urlpatterns = [
     path('', include(router.urls)),
-    #path('api/auth/', include('rest_framework.urls', namespace='rest_framework')),
-    #path('data/',ObtainAuthToken),
-    # path('checklogin/',views.check_login),
     path('addfollower/',ObtainAuthToken),
     path('tweet/',ObtainAuthToken),
     path('auth/',ObtainAuthToken.as_view()),
