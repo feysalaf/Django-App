@@ -2,11 +2,42 @@ from rest_framework import serializers
 #from django.contrib.auth.models import User
 from .models import Tweet,Profile,UserFollowing
 from django.contrib.auth.models import User, Group
+
+
+from django.contrib.auth import get_user_model
+
+Users = get_user_model()
 # User Serializer
+# class UserSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = User
+#         fields = ('id', 'username', 'email','password')
 class UserSerializer(serializers.ModelSerializer):
+
+    following = serializers.SerializerMethodField()
+    followers = serializers.SerializerMethodField()
+
+
     class Meta:
-        model = User
-        fields = ('id', 'username', 'email','password')
+        model = Users
+        fields = (
+            "id",
+            "email",
+            "username",
+            "following",
+            "followers",
+        )
+        extra_kwargs = {"password": {"write_only": True}}
+
+    def get_following(self, obj):
+        return FollowingSerializer(obj.following.all(), many=True).data
+
+    def get_followers(self, obj):
+        return FollowersSerializer(obj.followers.all(), many=True).data
+
+
+
+
 class ProfileSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Profile
@@ -34,5 +65,16 @@ class UserFollowingSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = UserFollowing
         fields = ('id',
-                  'user',
-                  'following_user')
+                  'user_id',
+                  'following_user_id')
+
+class FollowingSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = UserFollowing
+        fields = ("id", "following_user_id", "created")
+
+class FollowersSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = UserFollowing
+        fields = ("id", "user_id", "created")

@@ -15,7 +15,7 @@ from .models import User,Tweet,Profile,UserFollowing
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.authtoken.views import ObtainAuthToken
 from rest_framework.decorators import api_view, schema
-
+from django.db import models
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -38,12 +38,19 @@ class TweetViewSet(viewsets.ModelViewSet):
     #authentication_classes = (TokenAuthentication,)
     permission_classes = (permissions.AllowAny,)
 
-
+#
+# class UserFollowingViewSet(viewsets.ModelViewSet):
+#     queryset = UserFollowing.objects.all().order_by('id')
+#     serializer_class = UserFollowingSerializer
+#     #authentication_classes = (TokenAuthentication,)
+#     permission_classes = (permissions.AllowAny,)
 class UserFollowingViewSet(viewsets.ModelViewSet):
-    queryset = UserFollowing.objects.all().order_by('id')
-    serializer_class = UserFollowingSerializer
-    #authentication_classes = (TokenAuthentication,)
+
     permission_classes = (permissions.AllowAny,)
+    serializer_class = UserFollowingSerializer
+    queryset = UserFollowing.objects.all()
+
+
 
 class RegisterAPI(generics.GenericAPIView):
     serializer_class = RegisterSerializer
@@ -68,11 +75,9 @@ class LoginAPI(KnoxLoginView):
         print(request.user.username)
         return super(LoginAPI, self).post(request, format=None)
 
-class AddFollower(  APIView):
+class AddFollower(APIView):
     permission_classes = (permissions.AllowAny,)
-
     @csrf_exempt
     def post(self, request, format=None):
-
         UserFollowing.objects.create(user=self.request.data.get('userID'),following_user=self.request.data.get('followID'))
         return render_to_response({'status':status.HTTP_200_OK, 'data':"", 'message':"follow"+str(follow.user_id)})
