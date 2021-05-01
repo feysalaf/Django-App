@@ -8,6 +8,7 @@ UserModel = get_user_model()
 class User(models.Model):
     fields = ["username", "password"]
 
+
 class Profile(models.Model):
     user_name  = models.CharField(max_length=200)
     age = models.TextField()
@@ -30,8 +31,8 @@ class Tweet(models.Model):
 #     created = models.DateTimeField(auto_now_add=True)
 class UserFollowing(models.Model):
 
-    user_id = models.ForeignKey(UserModel, related_name="following", on_delete=models.CASCADE)
-    following_user_id = models.ForeignKey(UserModel, related_name="followers", on_delete=models.CASCADE)
+    user_id = models.ForeignKey(Profile, related_name="following", on_delete=models.CASCADE)
+    following_user_id = models.ForeignKey(Profile, related_name="followers", on_delete=models.CASCADE)
     created = models.DateTimeField(auto_now_add=True, db_index=True)
 
     class Meta:

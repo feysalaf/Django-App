@@ -11,7 +11,7 @@ router = routers.DefaultRouter()
 router.register(r'user', views.UserViewSet)
 router.register(r'profile',views.ProfileViewSet)
 router.register(r'tweet', views.TweetViewSet)
-router.register(r'UserFollowing', views.UserFollowingViewSet)
+router.register(r'userfollowing', views.UserFollowingViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

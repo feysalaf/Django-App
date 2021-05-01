@@ -22,7 +22,7 @@ class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('id')
     serializer_class = UserSerializer
     # authentication_classes = (TokenAuthentication,)
-    permission_classes = (IsAuthenticated,)
+    permission_classes = (permissions.AllowAny,)
 
 
 class ProfileViewSet(viewsets.ModelViewSet):
