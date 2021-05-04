@@ -6,14 +6,17 @@ UserModel = get_user_model()
 
 
 class User(models.Model):
-    fields = ["username", "password"]
+    fields = ["username", "password","following","followers"]
 
 
 class Profile(models.Model):
-    user_name  = models.CharField(max_length=200)
+    user = models.OneToOneField(UserModel,on_delete=models.CASCADE)
+    #user_name  = models.CharField(max_length=200)
     age = models.TextField()
-    def __str__(self):
-        return self.user_name
+    first_name = models.CharField(max_length=200)
+    last_name = models.CharField(max_length=200)
+    # def __str__(self):
+    #     return self.user_name
 
 
 class Tweet(models.Model):
