@@ -5,8 +5,8 @@ from django.contrib.auth import get_user_model
 UserModel = get_user_model()
 
 
-class User(models.Model):
-    fields = ["username", "password","following","followers"]
+#class User(models.Model):
+#    fields = ["username", "password","following","followers"]
 
 
 class Profile(models.Model):

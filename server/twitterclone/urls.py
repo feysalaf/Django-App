@@ -8,7 +8,7 @@ from .views import LoginAPI
 from knox import views as knox_views
 
 router = routers.DefaultRouter()
-router.register(r'user', views.UserViewSet)
+#router.register(r'user', views.UserViewSet)
 router.register(r'profile',views.ProfileViewSet)
 router.register(r'tweet', views.TweetViewSet)
 router.register(r'userfollowing', views.UserFollowingViewSet)
