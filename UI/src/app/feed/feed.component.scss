@@ -3,7 +3,7 @@
   flex-direction: column;
   width: 100%;
   height: 100%;
-  padding:20px;
+  padding: 0px;
   gap:20px;
 }
 .box{
@@ -12,4 +12,29 @@
 .flex_child{
   display: flex;
   flex-direction: column;
+  margin-left:50px;
+  margin-top:5px;
+}
+.hline{
+   flex:1;
+   display: block;
+   height: 1px;
+   border: 0;
+   border-top:1px solid #C4C4C4;
+   margin: 0px auto 0px auto;
+   padding: 0;
+   width:100%;
+}
+
+.icon {
+  vertical-align: middle;
+  display: inline-flex;
+  margin-left: -50px;
+
+}
+.text{
+    vertical-align: middle;
+    display: inline-flex;
+    margin-left: 15px;
+
 }

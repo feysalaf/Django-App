@@ -10,7 +10,7 @@ Users = get_user_model()
 #     class Meta:
 #         model = User
 #         fields = ('id', 'username', 'email','password')
-class UserSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.HyperlinkedModelSerializer):
     following = serializers.SerializerMethodField()
     followers = serializers.SerializerMethodField()
     class Meta:

@@ -10,3 +10,19 @@
   grid-template-rows:1fr;
   height:850px;
 }
+.centerblock{
+  margin-top:0 !important;
+  border-left:1px solid #C4C4C4;
+  border-right:1px solid #C4C4C4;
+  border-bottom: 1px solid #C4C4C4;
+}
+.hline{
+   flex:1;
+   display: block;
+   height: 1px;
+   border: 0;
+   border-top:1px solid #C4C4C4;
+   margin: 0px auto 0px auto;
+   padding: 0;
+   width:100%;
+}
