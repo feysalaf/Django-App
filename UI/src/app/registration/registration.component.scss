@@ -51,3 +51,27 @@ form{
   font-size:15px;
   width:93%;
 }
+button{
+  background-color:gray;
+  border: none;
+  font-weight: bold;
+}
+button:hover{
+  background-color:#00D1FF;
+  color:white;
+}
+button:active{
+  background-color:#00D1FF !important;
+  color:white !important;
+  outline:0 !important;
+  border:0 !important;
+
+}
+button:focus{
+  background-color:#00D1FF !important;
+  color:white !important;
+  outline:0 !important;
+  border:0 !important;
+    box-shadow: none !important;
+
+}
