@@ -12,6 +12,7 @@ import { LoginComponent } from './login/login.component';
 import { PanelComponent } from './panel/panel.component';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { AuthGuard } from './auth.guard';
+import { TweetComponent } from './tweet/tweet.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { AuthGuard } from './auth.guard';
     FollowingComponent,
     HomeComponent,
     LoginComponent,
-    PanelComponent
+    PanelComponent,
+    TweetComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,23 @@
+.flex_container{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+   padding: 0px;
+  font-size: 15px;
+}
+.flex_container:nth-child(n){
+ }
+.child_1{
+  }
+button{
+  background-color: #10C4AB;
+}
+ textarea{
+   width:100%;
+   padding:20px;
+   color:#C4C4C4;
+   border-radius: 11px;
+   height:100px;
+   font-size: 16px;
+   font-family: roboto;
+ }
