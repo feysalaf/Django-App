@@ -28,7 +28,7 @@ Available via the API:
 ## UI 
 * All authenticated users are redirected to the registration page
 <p align="center">
-  <img src="https://github.com/feysalaf/Django-App/blob/master/readme/screens/H1.png" width="100%" height="450" title="hover text">
+  <img src="https://github.com/feysalaf/Django-App/blob/master/readme/screens/registration.png" width="100%" height="450" title="hover text">
 </p>
 * Upon registration the data is sent to backend for storage and authenticated later 
  
@@ -42,7 +42,7 @@ Available via the API:
 
 * User is afterwards redirected to the home page 
 <p align="center">
-  <img src="https://github.com/feysalaf/Django-App/blob/master/readme/screens/U1.png" width="100%" height="450" title="hover text">
+  <img src="https://github.com/feysalaf/Django-App/blob/master/readme/screens/home.png" width="100%" height="450" title="hover text">
 </p>
 
 ## Log In Process
@@ -50,7 +50,7 @@ Available via the API:
 * After registration user logs in by providing the proper details
 
 <p align="center">
-  <img src="https://github.com/feysalaf/Django-App/blob/master/readme/screens/H2.png" width="100%" height="450" title="hover text">
+  <img src="https://github.com/feysalaf/Django-App/blob/master/readme/screens/login.png" width="100%" height="450" title="hover text">
 </p>
 
 * A token is generated upon login as well, angular uses this and adds it to the header of every request made by the user
